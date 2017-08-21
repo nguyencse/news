@@ -48,6 +48,8 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('user')->group(function () {
         Route::get('danhsach', 'UserController@getDanhSach');
+
         Route::get('them', 'UserController@getThem');
+        Route::post('them', 'UserController@postThem');
     });
 });
