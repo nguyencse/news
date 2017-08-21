@@ -4,6 +4,18 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                            {{ $err }}
+                        @endforeach
+                    </div>
+                @endif
+                @if(session('results'))
+                    <div class="alert alert-success">
+                        {{session('results')}}
+                    </div>
+                @endif
                 <div class="col-lg-12">
                     <h1 class="page-header">Category
                         <small>Edit</small>
@@ -12,6 +24,7 @@
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
                     <form action={{url('admin/theloai/sua/'.$theloai->id)}} method="POST">
+                        {{csrf_field()}}
                         <div class="form-group">
                             <label>Category Name</label>
                             <input class="form-control" name="ten" placeholder="Please enter category name"

@@ -19,8 +19,8 @@
                     @endif
                 </div>
                 <div class="col-lg-12">
-                    <h1 class="page-header">Category
-                        <small>Add</small>
+                    <h1 class="page-header">Thể loại
+                        <small>Thêm</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -28,11 +28,11 @@
                     <form action={{url('admin/theloai/them')}} method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="ten" placeholder="Please enter category name"/>
+                            <label>Tên thể loại</label>
+                            <input class="form-control" name="ten" placeholder="Điền vào tên thể loại"/>
                         </div>
-                        <button type="submit" class="btn btn-default">Add</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-default">Thêm</button>
+                        <button type="reset" class="btn btn-default">Làm lại</button>
                     </form>
                 </div>
             </div>

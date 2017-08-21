@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TheLoai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TheLoaiController extends Controller
 {
@@ -31,9 +32,13 @@ class TheLoaiController extends Controller
                 'ten.max' => 'Tên thể loại chỉ được có độ dài tối đa là 100 ký tự'
             ]);
 
+        DB::table('theloais')->where('id', $id)->update([
+            'ten' => $request->ten,
+            'tenkhongdau' => changeTitle($request->ten)
+        ]);
+
         $theloai = TheLoai::find($id);
-        $theloai->ten = $request->ten;
-        return $theloai->save();
+        return redirect('admin/theloai/sua/' . $id)->with('results', 'Cập nhật thể loại thành công');
     }
 
     public function getThem()
@@ -59,5 +64,12 @@ class TheLoaiController extends Controller
         $theloai->save();
 
         return redirect('admin/theloai/them')->with('results', 'Thêm thể loại thành công');
+    }
+
+    public function getXoa($id)
+    {
+        $theloai = TheLoai::findOrFail($id);
+        $theloai->delete();
+        return redirect('admin/theloai/danhsach')->with('results', 'Xóa ' . $theloai->ten . ' thành công');
     }
 }

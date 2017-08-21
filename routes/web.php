@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,6 +24,8 @@ Route::prefix('admin')->group(function () {
 
         Route::get('them', 'TheLoaiController@getThem');
         Route::post('them', 'TheLoaiController@postThem');
+
+        Route::get('xoa/{id}', 'TheLoaiController@getXoa');
     });
 
     Route::prefix('loaitin')->group(function () {

@@ -13,29 +13,29 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
             </li>
             <li>
-                <a href={{ url('admin/theloai/danhsach') }}><i class="fa fa-bar-chart-o fa-fw"></i> Category<span
+                <a href={{ url('admin/theloai/danhsach') }}><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('admin/theloai/danhsach') }}">List Category</a>
+                        <a href="{{ url('admin/theloai/danhsach') }}">Danh sách</a>
                     </li>
                     <li>
-                        <a href="{{ url('admin/theloai/them') }}">Add Category</a>
+                        <a href="{{ url('admin/theloai/them') }}">Thêm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-cube fa-fw"></i> Loại tin<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List Product</a>
+                        <a href={{ url('admin/loaitin/danhsach') }}>Danh sách</a>
                     </li>
                     <li>
-                        <a href="#">Add Product</a>
+                        <a href={{ url('admin/loaitin/them') }}>Thêm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
