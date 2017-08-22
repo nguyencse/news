@@ -4,49 +4,66 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
+                <div>
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                {{$error}}<br>
+                            @endforeach
+                        </div>
+                    @endif
+                    @if(session('add-result'))
+                        <div class="alert alert-success">
+                            {{session('add-result')}}
+                        </div>
+                    @endif
+                </div>
                 <div class="col-lg-12">
-                    <h1 class="page-header">Category
-                        <small>Add</small>
+                    <h1 class="page-header">Tin tức
+                        <small>Thêm</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="" method="POST">
+                    <form action="{{url('admin/tintuc/them')}}" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <label>Category Parent</label>
-                            <select class="form-control">
-                                <option value="0">Please Choose Category</option>
-                                <option value="">Tin Tức</option>
+                            <label>Tiêu đề</label>
+                            <input class="form-control" name="tieude" placeholder="Điền vào tiêu đề"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Tóm tắt</label>
+                            <input class="form-control" name="tomtat" placeholder="Điền vào tóm tắt"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung</label>
+                            <textarea class="form-control" rows="3" name="noidung"
+                                      placeholder="Điền vào nội dung tin tức"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh</label>
+                            <input type="file" name="hinh">
+                        </div>
+                        <div class="form-group">
+                            <label>Nổi bật</label>
+                            <input type="checkbox" class="checkbox-inline" checked value="1" name="chknoibat"
+                                   style="margin-left: 5px;margin-bottom: 5px">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượt xem</label>
+                            <input class="form-control" name="soluotxem" placeholder="Điền vào số lượt xem" value="0"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại tin</label>
+                            <select name="loaitin" id="input" class="form-control" required="required">
+                                @foreach($loaitin as $lt)
+                                    <option value="{{$lt->id}}">{{$lt->ten}}</option>
+                                @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Order</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Keywords</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Description</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Status</label>
-                            <label class="radio-inline">
-                                <input name="rdoStatus" value="1" checked="" type="radio">Visible
-                            </label>
-                            <label class="radio-inline">
-                                <input name="rdoStatus" value="2" type="radio">Invisible
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Category Add</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
-                    </form>
+                        <button type="submit" class="btn btn-default">Thêm</button>
+                        <button type="reset" class="btn btn-default">Làm lại</button>
+                        <form>
                 </div>
             </div>
             <!-- /.row -->

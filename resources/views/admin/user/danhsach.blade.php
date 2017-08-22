@@ -10,8 +10,8 @@
                     </div>
                 @endif
                 <div class="col-lg-12">
-                    <h1 class="page-header">User
-                        <small>List</small>
+                    <h1 class="page-header">Người dùng
+                        <small>Danh sách</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -37,7 +37,8 @@
                             <td>{{$user->quyen}}</td>
                             <td class="center"><i class="fa fa-trash-o fa-fw"></i><a
                                         href="{{url('admin/user/xoa/'.$user->id)}}"> Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="#"> Edit</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i><a
+                                        href="{{url('admin/user/sua/'.$user->id)}}"> Edit</a></td>
                         </tr>
                     @endforeach
                     </tbody>

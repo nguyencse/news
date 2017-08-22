@@ -4,53 +4,59 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                            {{$error}}
+                        @endforeach
+                    </div>
+                @endif
+                @if(session('update-result'))
+                    <div class="alert alert-success">
+                        {{session('update-result')}}
+                    </div>
+                @endif
                 <div class="col-lg-12">
-                    <h1 class="page-header">Category
-                        <small>Edit</small>
+                    <h1 class="page-header">Tài khoản
+                        <small>Sửa</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="" method="POST">
+                    <form action="{{url('admin/user/sua/'.$user->id)}}" method="POST">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <label>Category Parent</label>
-                            <select class="form-control">
-                                <option value="0">Please Choose Category</option>
-                                <option value="">Tin Tức</option>
-                            </select>
+                            <label>Tên người dùng</label>
+                            <input class="form-control" name="name" placeholder="Nhập tên đăng nhập"
+                                   value="{{$user->name}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name" />
+                            <label>Mật khẩu</label>
+                            <input type="password" class="form-control" name="pass"
+                                   placeholder="Nhập mật khẩu"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Order</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order" />
+                            <label>Nhập lại mật khẩu</label>
+                            <input type="password" class="form-control" name="repass"
+                                   placeholder="Nhập lại mật khẩu"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Keywords</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
-                        </div>
-                        <div class="form-group">
-                            <label>Category Description</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Status</label>
+                            <label>Quyền</label>
                             <label class="radio-inline">
-                                <input name="rdoStatus" value="1" checked="" type="radio">Visible
+                                <input name="rdoLevel" value="1" {{$user->quyen == 1 ? 'checked' : ''}} type="radio">Quản
+                                trị viên
                             </label>
                             <label class="radio-inline">
-                                <input name="rdoStatus" value="2" type="radio">Invisible
+                                <input name="rdoLevel" value="0" {{$user->quyen == 0 ? 'checked' : ''}} type="radio">Thành
+                                viên
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Category Edit</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
-                        <form>
+                        <button type="submit" class="btn btn-default">Thêm</button>
+                        <button type="reset" class="btn btn-default">Làm lại</button>
+                    </form>
                 </div>
+                <!-- /.row -->
             </div>
-            <!-- /.row -->
+            <!-- /.container-fluid -->
         </div>
-        <!-- /.container-fluid -->
-    </div>
 @endsection
