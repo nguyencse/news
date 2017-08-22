@@ -41,13 +41,13 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Tài khoản<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('admin/user/danhsach') }}">List User</a>
+                        <a href="{{ url('admin/user/danhsach') }}">Danh sách</a>
                     </li>
                     <li>
-                        <a href="{{ url('admin/user/them') }}">Add User</a>
+                        <a href="{{ url('admin/user/them') }}">Thêm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

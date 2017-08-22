@@ -4,6 +4,11 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
+                @if(session('delete-result'))
+                    <div class="alert alert-success">
+                        {{session('delete-result')}}
+                    </div>
+                @endif
                 <div class="col-lg-12">
                     <h1 class="page-header">User
                         <small>List</small>
@@ -30,7 +35,8 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->password}}</td>
                             <td>{{$user->quyen}}</td>
-                            <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href="#"> Delete</a></td>
+                            <td class="center"><i class="fa fa-trash-o fa-fw"></i><a
+                                        href="{{url('admin/user/xoa/'.$user->id)}}"> Delete</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="#"> Edit</a></td>
                         </tr>
                     @endforeach
