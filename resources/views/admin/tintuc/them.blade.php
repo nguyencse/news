@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label>Nội dung</label>
                             <textarea class="form-control" rows="3" name="noidung"
-                                      placeholder="Điền vào nội dung tin tức"></textarea>
+                                      placeholder="Điền vào nội dung tin tức" id="summary-ckeditor"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Hình ảnh</label>
@@ -70,4 +70,18 @@
         </div>
         <!-- /.container-fluid -->
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('summary-ckeditor');
+        CKEDITOR.config.extraAllowedContent = 'iframe[*]';
+        $('textarea#content').ckeditor({
+            toolbar: 'Full',
+            enterMode: CKEDITOR.ENTER_BR,
+            shiftEnterMode: CKEDITOR.ENTER_P,
+            height: '800px'
+        });
+    </script>
 @endsection
