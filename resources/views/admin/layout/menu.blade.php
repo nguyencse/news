@@ -56,10 +56,10 @@
                 <a href="#"><i class="fa fa-cube fa-fw"></i> Slide<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Danh sách</a>
+                        <a href="{{ url('admin/slide/danhsach') }}">Danh sách</a>
                     </li>
                     <li>
-                        <a href="#">Thêm</a>
+                        <a href="{{ url('admin/slide/them') }}">Thêm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

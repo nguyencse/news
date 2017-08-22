@@ -67,6 +67,9 @@ Route::prefix('admin')->group(function () {
     Route::prefix('slide')->group(function () {
         Route::get('danhsach', 'SlideController@getDanhSach');
 
+        Route::get('them', 'SlideController@getThem');
+        Route::post('them', 'SlideController@postThem');
+
         Route::get('xoa/{id}', 'SlideController@getXoa');
     });
 });

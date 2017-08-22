@@ -77,11 +77,5 @@
     <script>
         CKEDITOR.replace('summary-ckeditor');
         CKEDITOR.config.extraAllowedContent = 'iframe[*]';
-        $('textarea#content').ckeditor({
-            toolbar: 'Full',
-            enterMode: CKEDITOR.ENTER_BR,
-            shiftEnterMode: CKEDITOR.ENTER_P,
-            height: '800px'
-        });
     </script>
 @endsection
