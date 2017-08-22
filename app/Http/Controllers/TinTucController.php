@@ -102,7 +102,7 @@ class TinTucController extends Controller
             'noibat' => Input::get('chknoibat', 0),
             'soluotxem' => $request->soluotxem
         ]);
-        return redirect('admin/tintuc/sua' . $id)->with('update-result', 'Cập nhật tin tức thành công');
+        return redirect('admin/tintuc/sua/' . $id)->with('update-result', 'Cập nhật tin tức thành công');
     }
 
     public function getXoa($id)

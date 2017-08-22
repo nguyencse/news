@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
+    Route::get('login', function () {
+        return view('admin.login');
+    });
+
     Route::prefix('theloai')->group(function () {
         Route::get('danhsach', 'TheLoaiController@getDanhSach');
 
