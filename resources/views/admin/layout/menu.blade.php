@@ -16,7 +16,7 @@
                 <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
             </li>
             <li>
-                <a href={{ url('admin/theloai/danhsach') }}><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -44,10 +44,10 @@
                 <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List User</a>
+                        <a href="{{ url('admin/user/danhsach') }}">List User</a>
                     </li>
                     <li>
-                        <a href="#">Add User</a>
+                        <a href="{{ url('admin/user/them') }}">Add User</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Category
+                    <h1 class="page-header">User
                         <small>Add</small>
                     </h1>
                 </div>
@@ -13,40 +13,35 @@
                 <div class="col-lg-7" style="padding-bottom:120px">
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label>Category Parent</label>
-                            <select class="form-control">
-                                <option value="0">Please Choose Category</option>
-                                <option value="">Tin Tức</option>
-                            </select>
+                            <label>Username</label>
+                            <input class="form-control" name="txtUser" placeholder="Please Enter Username"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name"/>
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="txtPass"
+                                   placeholder="Please Enter Password"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Order</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order"/>
+                            <label>RePassword</label>
+                            <input type="password" class="form-control" name="txtRePass"
+                                   placeholder="Please Enter RePassword"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Keywords</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords"/>
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Please Enter Email"/>
                         </div>
                         <div class="form-group">
-                            <label>Category Description</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Status</label>
+                            <label>User Level</label>
                             <label class="radio-inline">
-                                <input name="rdoStatus" value="1" checked="" type="radio">Visible
+                                <input name="rdoLevel" value="1" checked="" type="radio">Admin
                             </label>
                             <label class="radio-inline">
-                                <input name="rdoStatus" value="2" type="radio">Invisible
+                                <input name="rdoLevel" value="2" type="radio">Member
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Category Add</button>
+                        <button type="submit" class="btn btn-default">Add</button>
                         <button type="reset" class="btn btn-default">Reset</button>
-                    </form>
+                        <form>
                 </div>
             </div>
             <!-- /.row -->

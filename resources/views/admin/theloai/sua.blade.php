@@ -5,20 +5,20 @@
         <div class="container-fluid">
             <div class="row">
                 @if(count($errors) > 0)
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger result-notification">
                         @foreach($errors->all() as $err)
                             {{ $err }}
                         @endforeach
                     </div>
                 @endif
                 @if(session('results'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success result-notification">
                         {{session('results')}}
                     </div>
                 @endif
                 <div class="col-lg-12">
-                    <h1 class="page-header">Category
-                        <small>Edit</small>
+                    <h1 class="page-header">Thể loại
+                        <small>Sửa</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -26,12 +26,12 @@
                     <form action={{url('admin/theloai/sua/'.$theloai->id)}} method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="ten" placeholder="Please enter category name"
+                            <label>Tên thể loại</label>
+                            <input class="form-control" name="ten" placeholder="Nhập vào tên thể loại"
                                    value="{{$theloai->ten}}"/>
                         </div>
-                        <button type="submit" class="btn btn-default">Save</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-default">Lưu</button>
+                        <button type="reset" class="btn btn-default">Làm lại</button>
                     </form>
                 </div>
             </div>
@@ -39,4 +39,12 @@
         </div>
         <!-- /.container-fluid -->
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('.result-notification').fadeOut(5000);
+        });
+    </script>
 @endsection

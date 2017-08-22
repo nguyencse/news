@@ -30,13 +30,24 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('loaitin')->group(function () {
         Route::get('danhsach', 'LoaiTinController@getDanhSach');
-        Route::get('sua', 'LoaiTinController@getSua');
+
         Route::get('them', 'LoaiTinController@getThem');
+        Route::post('them', 'LoaiTinController@postThem');
+
+        Route::get('sua/{id}', 'LoaiTinController@getSua');
+        Route::post('sua/{id}', 'LoaiTinController@postSua');
+
+        Route::get('xoa/{id}', 'LoaiTinController@getXoa');
     });
 
     Route::prefix('tintuc')->group(function () {
         Route::get('danhsach', 'TinTucController@getDanhSach');
         Route::get('sua', 'TinTucController@getSua');
         Route::get('them', 'TinTucController@getThem');
+    });
+
+    Route::prefix('user')->group(function () {
+        Route::get('danhsach', 'UserController@getDanhSach');
+        Route::get('them', 'UserController@getThem');
     });
 });
