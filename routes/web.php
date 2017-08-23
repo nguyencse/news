@@ -16,10 +16,6 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('login', function () {
-        return view('admin.login');
-    });
-
     Route::prefix('theloai')->group(function () {
         Route::get('danhsach', 'TheLoaiController@getDanhSach');
 
@@ -66,5 +62,11 @@ Route::prefix('admin')->group(function () {
         Route::post('sua/{id}', 'UserController@postSua');
 
         Route::get('xoa/{id}', 'UserController@getXoa');
+    });
+
+    Route::prefix('slide')->group(function () {
+        Route::get('danhsach', 'SlideController@getDanhSach');
+
+        Route::get('xoa/{id}', 'SlideController@getXoa');
     });
 });
