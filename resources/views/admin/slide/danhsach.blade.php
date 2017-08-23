@@ -37,7 +37,8 @@
                             <td>{{$sl->link}}</td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                                         href="{{url('admin/slide/xoa/'.$sl->id)}}"> Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="#"> Edit</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i><a
+                                        href="{{url('admin/slide/sua/'.$sl->id)}}"> Edit</a></td>
                         </tr>
                     @endforeach
                     </tbody>

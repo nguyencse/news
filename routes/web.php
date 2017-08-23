@@ -70,6 +70,9 @@ Route::prefix('admin')->group(function () {
         Route::get('them', 'SlideController@getThem');
         Route::post('them', 'SlideController@postThem');
 
+        Route::get('sua/{id}', 'SlideController@getSua');
+        Route::post('sua/{id}', 'SlideController@postSua');
+
         Route::get('xoa/{id}', 'SlideController@getXoa');
     });
 });
