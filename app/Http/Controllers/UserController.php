@@ -24,7 +24,9 @@ class UserController extends Controller
     public function getXoa($id)
     {
         $comments = Comment::where('id_user', $id)->get();
-        $comments->delete();
+        foreach ($comments as $comment) {
+            $comment->delete();
+        }
         $user = User::find($id);
         $user->delete();
         return redirect('admin/user/danhsach')->with('delete-result', 'Đã xóa "' . $user->name . '"');

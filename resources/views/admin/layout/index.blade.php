@@ -64,10 +64,14 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
+        $('#dashboard').click(function () {
+            alert('Nothing to show here');
+        });
     });
 </script>
 
 @yield('script')
-</body>
+<
+/body>
 
-</html>
+< /html>
